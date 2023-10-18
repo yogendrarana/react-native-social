@@ -1,5 +1,6 @@
 import { FlatList, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import React from 'react'
+import Tabs from '../shared/Tabs'
 
 const categories = [
     {id: 1, title: 'overview'}, 
@@ -8,26 +9,11 @@ const categories = [
     {id: 4, title: 'radio'}
 ]
 
-const RenderCategory = ({item}) => {
-    return (
-        <Pressable style={styles.categoryDiv}>
-            <Text style={{color: "black"}}>{item.title}</Text>
-        </Pressable>
-    )
-}
-
-
 const Categories = () => {
 
     return (
         <View style={{paddingHorizontal: 15}}>
-            <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={categories}
-                renderItem={({item}) => <RenderCategory item={item} />}
-                keyExtractor={item => item.id}
-            />
+           <Tabs tabs={['overview', 'songs', 'podcast', 'radio']} /> 
         </View>
     )
 }

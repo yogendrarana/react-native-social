@@ -10,21 +10,21 @@ interface PropType {
     navigation: any
 }
 
-export default function Login({ navigation }: PropType): React.ReactElement {    
+export default function Login({ navigation }: PropType): React.ReactElement {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTextTop}>Login</Text> 
+                <Text style={styles.headerTextTop}>Login</Text>
                 <Text style={styles.headerTextBottom}>Please login to continue.</Text>
             </View>
 
             <View style={styles.form}>
-                <TextInput style={styles.input} placeholder='Email' placeholderTextColor="#b2beb5" color="black" />
+                <TextInput style={styles.input} placeholder='Email' placeholderTextColor="#b2beb5" />
 
-                <TextInput style={styles.input} placeholder='Password' placeholderTextColor="#b2beb5" color="black" />
+                <TextInput style={styles.input} placeholder='Password' placeholderTextColor="#b2beb5" />
 
-                <Pressable onPress={() => navigation.navigate("Forgot Password")} style={[styles.button, styles.forgotPasswordBtn]}>
-                    <Text style={styles.forgotPasswordBtnText}>Forgot Password?</Text>
+                <Pressable onPress={() => navigation.navigate("Forgot Password")} style={styles.button}>
+                    <Text style={[styles.forgotPasswordBtnText, styles.forgotPasswordBtn]}>Forgot Password?</Text>
                 </Pressable>
 
                 <Pressable onPress={() => navigation.navigate('MainHome')} style={[styles.button, styles.loginBtn]}>
@@ -50,48 +50,49 @@ export default function Login({ navigation }: PropType): React.ReactElement {
 };
 
 const styles = StyleSheet.create({
-    container: { 
-        flex: 1, 
-        width: '100%', 
-        padding: 15, 
-        justifyContent: 'center', 
-        alignItems: 'center', 
+    container: {
+        flex: 1,
+        width: '100%',
+        padding: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: 'white'
     },
-    header: { marginBottom: 30, textAlign: 'center', color: '#000'},
+    header: { marginBottom: 30, textAlign: 'center', color: '#000' },
     headerTextTop: { fontSize: 30, color: 'black', textAlign: 'center', },
-    headerTextBottom: {marginTop: 5, color: '#9E7676'},
+    headerTextBottom: { marginTop: 5, color: '#9E7676' },
     form: { paddingHorizontal: 10, width: "100%", alignItems: 'center' },
-    row: { width: '100%', marginVertical: 5, justifyContent: 'center'},
+    row: { width: '100%', marginVertical: 5, justifyContent: 'center' },
     label: { fontSize: 16, color: "#000" },
-    input: { 
+    input: {
         height: 50,
-        width: "100%", 
-        borderBottomWidth: 1, 
+        width: "100%",
+        color: "black",
+        borderBottomWidth: 1,
         borderColor: "#b2beb5",
         padding: 15,
-        marginVertical: 10, 
+        marginVertical: 10,
     },
-    
+
     // Login Btn Styles
-    button: {width: "100%", marginVertical: 15, },
-    forgotPasswordBtn: {color: 'black'},
-    forgotPasswordBtnText: { textAlign: 'right', color: 'black'},
+    button: { width: "100%", marginVertical: 15, },
+    forgotPasswordBtn: { color: 'black' },
+    forgotPasswordBtnText: { textAlign: 'right' },
     loginBtn: { padding: 15, alignItems: 'center', borderRadius: 10, backgroundColor: "#3B82F6" },
     loginBtnText: { fontSize: 16, fontWeight: '800', color: '#fff', },
     googleBtn: {
         padding: 15,
-        flexDirection: 'row', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
         borderWidth: 1,
         borderColor: "#b2beb5",
         borderRadius: 10,
     },
-    googleBtnText: {marginLeft: 10, color: 'black'},
-    
+    googleBtnText: { marginLeft: 10, color: 'black' },
+
     // footer
     footer: { textAlign: 'center', flexDirection: 'row' },
-    footerText: { fontWeight: 'bold', color: 'black' },  
-    signupBtnText: {color: 'black'}
+    footerText: { fontWeight: 'bold', color: 'black' },
+    signupBtnText: { color: 'black' }
 });

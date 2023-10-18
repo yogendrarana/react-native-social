@@ -1,16 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 
 // import components
-import { Header, Categories, Stories, Divider } from '../exports';
+import { Header, Categories, Stories, Divider, Banner } from '../exports';
 
 const Home = () => {
     return (
         <View style={styles.container}>
             <Header />
             <Stories />
-            {/* <Banner /> */}
+            <Banner />
             <Categories />
-            {/* <Divider subheaderText='' /> */}
         </View>
     )
 }
