@@ -4,7 +4,6 @@ import { StyleSheet, View } from 'react-native';
 import Header from './components/Header';
 import Stories from './components/Stories';
 import Banner from './components/Banner';
-import Categories from './components/Categories';
 
 const Home = () => {
     return (
@@ -12,7 +11,6 @@ const Home = () => {
             <Header />
             <Stories />
             <Banner />
-            <Categories />
         </View>
     )
 }

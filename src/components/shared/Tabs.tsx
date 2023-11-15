@@ -24,19 +24,18 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                                 {
                                     flex: 1,
                                     alignItems: 'center',
-                                    // borderWidth: 1,
-                                    // borderColor: 'rgba(0, 128, 128, 0.25)',
+                                    borderColor: 'rgba(0, 128, 128, 0.25)',
                                     paddingVertical: 7.5,
                                     borderRadius: 100,
                                 },
                                 activeTab === index && {
                                     flex: 1,
-                                    backgroundColor: "rgba(0, 128, 128, 0.25)",
+                                    backgroundColor: "#000",
                                 }
                             ]}
                         >
                             <Text style={{
-                                color: 'rgba(0, 128, 128, 0.75)',
+                                color:  activeTab === index ? '#fff' : '#000',
                                 fontWeight: 'bold',
                                 fontSize: 16,
                                 textTransform: 'capitalize',
