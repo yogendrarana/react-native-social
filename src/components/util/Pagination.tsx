@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Animated, View, useWindowDimensions } from 'react-native'
 
-const Pagination = ({ data, scrollX }) => {
+export default function Pagination ({ data, scrollX }) {
 
     const { width } = useWindowDimensions();
 
@@ -25,7 +25,6 @@ const Pagination = ({ data, scrollX }) => {
     )
 }
 
-export default Pagination
 
 const styles = StyleSheet.create({
     container: {

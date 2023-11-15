@@ -1,26 +1,25 @@
 import { useNavigation } from '@react-navigation/native'
-import { StyleSheet, Text, View, Pressable, Image, Alert } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Image, } from 'react-native'
 
 // import icon
-import message from '../../assets/icons/message.png'
+import Message from '../../../assets/icons/message.png'
 
-const Header: React.FC = () => {
-    const navigation = useNavigation();
+export default function Header() {
+    const navigation:any = useNavigation()
 
     return (
         <View style={styles.container}>
             <Text style={styles.logo}>Vibes</Text>
 
             <View style={styles.buttons}>
-                <Pressable onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Login' }]})}>
-                    <Image source={message} style={{ height: 25, width: 25 }} />
+                <Pressable onPress={() => navigation.reset({ index: 0, routes: [{ name: 'Login' }] })}>
+                    <Image source={Message} style={{ height: 25, width: 25 }} />
                 </Pressable>
             </View>
         </View>
     )
 }
 
-export default Header
 
 const styles = StyleSheet.create({
     container: {

@@ -1,6 +1,18 @@
 import { useRef } from 'react'
-import { StyleSheet, View, Image, FlatList, useWindowDimensions, Animated } from 'react-native'
-import { Pagination } from '../../screens/exports';
+import { 
+    View, 
+    Image, 
+    FlatList, 
+    Animated, 
+    StyleSheet,      
+    NativeScrollEvent,
+    NativeSyntheticEvent, 
+    useWindowDimensions, 
+} from 'react-native'
+
+// import components
+import Pagination from '../../../components/util/Pagination';
+
 
 let contents = [
     { name: "Scarlett Johansson", profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv_hGYmCwCT-x-LSRZ-KASb2ZeM-xP4TpZfw&usqp=CAU" },
@@ -11,13 +23,14 @@ let contents = [
 ]
 
 
-const Banner = () => {
+export default function Banner () {
+
     const { height, width } = useWindowDimensions();
     const slideWidth = width - 30;
 
     const scrollX = useRef(new Animated.Value(0)).current;
 
-    const handleScroll = (event) => {
+    const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
             { useNativeDriver: false }
@@ -50,7 +63,6 @@ const Banner = () => {
     )
 }
 
-export default Banner
 
 const styles = StyleSheet.create({
     container: {

@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native'
+
+// import components
 import Tabs from '../../components/shared/Tabs';
 
-const Ground = () => {
+export default function Ground () {
 
     return (
         <View style={styles.container}>
@@ -10,7 +12,6 @@ const Ground = () => {
     )
 }
 
-export default Ground;
 
 const styles = StyleSheet.create({
     container: {

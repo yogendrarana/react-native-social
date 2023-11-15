@@ -1,6 +1,8 @@
-import { FlatList, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import React from 'react'
-import Tabs from '../shared/Tabs'
+import { StyleSheet, View } from 'react-native'
+
+// import components
+import Tabs from '../../../components/shared/Tabs'
 
 const categories = [
     {id: 1, title: 'overview'}, 
@@ -9,7 +11,7 @@ const categories = [
     {id: 4, title: 'radio'}
 ]
 
-const Categories = () => {
+export default function Categories () {
 
     return (
         <View style={{paddingHorizontal: 15}}>
@@ -18,7 +20,6 @@ const Categories = () => {
     )
 }
 
-export default Categories
 
 const styles = StyleSheet.create({
     categoryDiv: {

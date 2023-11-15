@@ -15,4 +15,4 @@ const Icon = ({ image, focused }: IconProps) => {
     )
 }
 
-export default Icon
+export default Icon;

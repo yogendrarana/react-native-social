@@ -1,21 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable, Image } from 'react-native';
+
 
 // import component
-import { Divider } from '../exports';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Divider from '../../../components/util/Divider';
+
+
+// import logo
+import Logo from '../../../assets/logo/logo.png';
+
 
 // prop type
 interface PropType {
     navigation: any
 }
 
+
 export default function Login({ navigation }: PropType): React.ReactElement {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTextTop}>Login</Text>
-                <Text style={styles.headerTextBottom}>Please login to continue.</Text>
+                <Image source={Logo} style={styles.logo} />
             </View>
 
             <View style={styles.form}>
@@ -34,7 +39,6 @@ export default function Login({ navigation }: PropType): React.ReactElement {
                 <Divider subheaderText='or' />
 
                 <Pressable onPress={() => navigation.navigate('#')} style={[styles.button, styles.googleBtn]}>
-                    <Icon name="google" size={19} color="#4285F4" />
                     <Text style={styles.googleBtnText}>Login with Google</Text>
                 </Pressable>
             </View>
@@ -59,6 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     header: { marginBottom: 30, textAlign: 'center', color: '#000' },
+    logo: { height: 80, width: 80, resizeMode: 'contain' },
     headerTextTop: { fontSize: 30, color: 'black', textAlign: 'center', },
     headerTextBottom: { marginTop: 5, color: '#9E7676' },
     form: { paddingHorizontal: 10, width: "100%", alignItems: 'center' },
